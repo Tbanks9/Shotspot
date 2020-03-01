@@ -1,0 +1,9 @@
+<h1>City INDEX</h1>
+
+{% for city in cities %}
+<div>
+  <a href="/cities/{{ city.id }}/"></a>
+  <h3>{{ city.city_name }}</h3>
+  <h4>{{ city.city_description}}</h4>
+</div>
+{% endfor %}

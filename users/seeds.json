@@ -1,0 +1,70 @@
+[
+{
+  "model": "users.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$wPK2c6gt0B2s$EWvOfn6AhFcm5j4hzYO73deVI5QZfe848MJK7+7eht4=",
+    "last_login": "2020-02-27T09:58:54Z",
+    "is_superuser": true,
+    "username": "timbanks",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-02-27T09:58:38Z",
+    "first_name": "Tim",
+    "second_name": "Banks",
+    "email": "tim@email.com",
+    "groups": [],
+    "user_permissions": [],
+    "cities": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "users.user",
+  "pk": 2,
+  "fields": {
+    "password": "pass",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "jamesbanks",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-02-27T10:22:29Z",
+    "first_name": "James",
+    "second_name": "Banks",
+    "email": "James@email.com",
+    "groups": [],
+    "user_permissions": [],
+    "cities": [
+      1
+    ]
+  }
+},
+{
+  "model": "users.user",
+  "pk": 3,
+  "fields": {
+    "password": "pass",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "josbogan",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-02-27T14:42:14Z",
+    "first_name": "Jos",
+    "second_name": "Bogan",
+    "email": "jos@email.com",
+    "groups": [],
+    "user_permissions": [],
+    "cities": [
+      1,
+      2
+    ]
+  }
+}
+]

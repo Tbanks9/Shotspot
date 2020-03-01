@@ -1,0 +1,8 @@
+<h1>Images INDEX</h1>
+
+{% for image in images %}
+<div>
+  <a href="/images/{{ image.id }}/"></a>
+  <h3>{{ image.image_title }}</h3>
+</div>
+{% endfor %}

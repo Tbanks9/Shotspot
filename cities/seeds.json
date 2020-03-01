@@ -1,0 +1,26 @@
+[
+{
+  "model": "cities.city",
+  "pk": 1,
+  "fields": {
+    "city_name": "Hong Kong",
+    "city_description": "Hong Kong is an energetic blend of culture, history and innovation. It's an urban jungle surrounded by areas of complete natural seclusion. Here are some of the best photography spots"
+  }
+},
+{
+  "model": "cities.city",
+  "pk": 2,
+  "fields": {
+    "city_name": "London",
+    "city_description": "London has its fill of awesome spots for Instagram and photography. Ranging from beautiful and historical landmarks, colourful exteriors, breathtaking views and lots more. In this post, you\u2019ll find the best locations, as well as some tips and techniques to help you capture the best photographs."
+  }
+},
+{
+  "model": "cities.city",
+  "pk": 3,
+  "fields": {
+    "city_name": "Tokyo",
+    "city_description": "Tokyo is a city like no other. It’s the kind of place where travellers will find themselves completely immersed in photography opportunities. For those looking to capture some of the classic and also some unique perspectives of this incredible city then looked no further. Here are some of the best Instagram and photography spots in Toyko."
+  }
+}
+]

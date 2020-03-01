@@ -1,0 +1,8 @@
+<h1>USERS INDEX</h1>
+
+{% for user in users %}
+<div>
+  <!-- <img src="{{ user.image }}" alt="{{ user.title }}" /> -->
+  <h3>{{ user.first_name }}</h3>
+</div>
+{% endfor %}
