@@ -22,7 +22,9 @@ h1 {
 }
 
 .navbar {
-  opacity: 0.5;
+  opacity: 0.9;
+  font-family: 'Montserrat', ;
+  font-weight: bolder;
 }
 
 div.logincontainer {
@@ -33,4 +35,12 @@ div.logincontainer {
 div.logincolumns {
   display: flex;
   align-content: center;
+}
+
+.hero-body-index {
+  padding-top: 100px;
+  background-color: #8C9EB6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
 }

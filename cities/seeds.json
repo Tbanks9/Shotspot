@@ -19,8 +19,16 @@
   "model": "cities.city",
   "pk": 3,
   "fields": {
-    "city_name": "Tokyo",
-    "city_description": "Tokyo is a city like no other. It’s the kind of place where travellers will find themselves completely immersed in photography opportunities. For those looking to capture some of the classic and also some unique perspectives of this incredible city then looked no further. Here are some of the best Instagram and photography spots in Toyko."
+    "city_name": "Sydney",
+    "city_description": "Sydney is home to one of the world\u2019s most beautiful sea harbours, iconic architectural masterpieces and a wonderful mix of urban and natural environments. Although its skyline is known the world over, there are visual treasures hidden all over Australia\u2019s most populated city. Here are some of the best places to get a great shot.."
+  }
+},
+{
+  "model": "cities.city",
+  "pk": 4,
+  "fields": {
+    "city_name": "Bangkok",
+    "city_description": "Every day, thousands of tourists come to Bangkok to see a grandiose city of contrasts, wander along the turquoise beaches, visit authentic night markets, and try the most exotic food in the world. Let\u2019s see what the key photography spots are."
   }
 }
 ]

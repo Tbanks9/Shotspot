@@ -1,14 +1,11 @@
 # pylint: disable=no-member
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.status import HTTP_404_NOT_FOUND, HTTP_201_CREATED, HTTP_422_UNPROCESSABLE_ENTITY, HTTP_204_NO_CONTENT, HTTP_202_ACCEPTED, HTTP_401_UNAUTHORIZED
 from .models import City
 from .serializers import PopulatedCitySerializer, CitySerializer
 
 class CityListView(APIView):
-
-    permission_classes = (IsAuthenticatedOrReadOnly, )
 
     def get(self, _request):
         cities = City.objects.all()

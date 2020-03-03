@@ -20,7 +20,7 @@ urlpatterns = [
     path('django-admin/', admin.site.urls),
     path('admin/', include('rest_framework.urls')),
     path('api/cities/', include('cities.urls')),
-    path('api/images/', include('images.urls')),
+    # path('api/images/', include('images.urls')),
     path('api/photographyspots/', include('photographyspots.urls')),
     path('api/', include('users.urls')),
     # path('admin/', admin.site.urls),

@@ -1,0 +1,57 @@
+[
+{
+  "model": "photographyspots.photographyspot",
+  "pk": 1,
+  "fields": {
+    "location_name": "Hong-Kong Skyline from the peak",
+    "location_description": "One of the best and most popular locations for Instagram and photography is from Sky Terrace 428 at the Peak. From up here you\u2019ll get to enjoy the best views over the city. When visiting I recommend coming up around sunset and into the blue hour. This way you\u2019ll get to capture photographs with the city in different light. It can get busy though, especially towards sunset.",
+    "location_image": "https://www.travelanddestinations.com/wp-content/uploads/2017/04/Hong-Kong-Skyline-at-night-from-the-Peak.jpg",
+    "visited": false,
+    "city": 1
+  }
+},
+{
+  "model": "photographyspots.photographyspot",
+  "pk": 2,
+  "fields": {
+    "location_name": "Neal\u2019s Yard",
+    "location_description": "Neal\u2019s Yard is perfect for those that like lots of colours in their photos and is almost a secret photography spot in London. You should head here early before it gets too busy. To get to Neal\u2019s Yard get off at Covent Garden underground station and then it\u2019s only a short walk.",
+    "location_image": "https://www.travelanddestinations.com/wp-content/uploads/2017/01/Neils-Yard.jpg",
+    "visited": false,
+    "city": 2
+  }
+},
+{
+  "model": "photographyspots.photographyspot",
+  "pk": 3,
+  "fields": {
+    "location_name": "Yick Fat",
+    "location_description": "The Yick Fat Building is located just east of Hong Kong's Central Business District, on Hong Kong Island. To reach the Yick Fat Building, take the Island Line of the Hong Kong MTR to Tai Koo Station, then get out at Exit B and head west on King's Road for two blocks. The Yick Fat Building will be located behind you, if you're looking forward at the road.",
+    "location_image": "https://www.travelanddestinations.com/wp-content/uploads/2018/05/Yick-Fat-building-in-Hong-Kong-during-the-day.jpg",
+    "visited": false,
+    "city": 1
+  }
+},
+{
+  "model": "photographyspots.photographyspot",
+  "pk": 4,
+  "fields": {
+    "location_name": "Talat Rod Fai Market",
+    "location_description": "Talat Rod Fai, also known as the Train Market, is one of the biggest and most popular of the Bangkok night markets. Now open for around 10 years, Talat Rot Fai gets its name from the original Rod Fai night market located next to the train tracks on the outskirts of Bangkok.",
+    "location_image": "https://media-cdn.tripadvisor.com/media/photo-s/09/a0/92/81/train-night-market.jpg",
+    "visited": false,
+    "city": 4
+  }
+},
+{
+  "model": "photographyspots.photographyspot",
+  "pk": 5,
+  "fields": {
+    "location_name": "Wat Pho",
+    "location_description": "Built in the 16th century, it now features a chapel housing one of the largest single statues of Buddha in Thailand. The Reclining Buddha is an impressive 46-meter statue of gold and stone with delicately inlaid mother-of-pearl mosaics on its feet. Use this chance to take some close-ups of Buddha.",
+    "location_image": "https://d10vk5dg0puvhi.cloudfront.net/images/destinations/origin/5dcb8e684f1b3.jpg",
+    "visited": false,
+    "city": 4
+  }
+}
+]

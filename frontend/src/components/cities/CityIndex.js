@@ -1,30 +1,28 @@
 import React from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
-import Auth from '../../lib/auth'
+import Select from 'react-select'
+// import { Link } from 'react-router-dom'
+// import Auth from '../../lib/auth'
 
 class CityIndex extends React.Component {
   state = {
-    cities: [],
-    cityFilter: ''
+    cities: null,
+    cityFilter: '',
+    chosenCity: 'ALL',
   }
+
+  options = [
+    { value: 'Bangkok', label: 'Bangkok' },
+    { value: 'Hong Kong', label: 'Hong Kong' },
+    { value: 'London', label: 'London' },
+    { value: 'Sydney', label: 'Sydney' },
+    { value: 'Reykjavik', label: 'Reykjavik' }
+  ]
 
   async getData() {
     try {
       const res = await axios.get('/api/cities')
-      let filteredCities = []
-      const cityFilter = localStorage.getItem('city')
-      if (cityFilter === 'ALL') {
-        filteredCities = [...res.data]
-      } 
-      // else {
-      //   res.data.filter(user => {
-      //     if (user.cities.includes(`${cityFilter}`) && city._id !== Auth.getCity()) {
-      //       filteredCities = [...filteredCities, city]
-      //     } return res.data
-      //   })
-      // }
-      this.setState({ cities: filteredCities, cityFilter })
+      this.setState({ cities: res.data })
     } catch (err) {
       console.log(err)
     }
@@ -34,41 +32,49 @@ class CityIndex extends React.Component {
     this.getData()
   }
 
-  // componentDidUpdate() {
-  //   const cityFilter = localStorage.getItem('city')
-  //   cityFilter !== this.state.cityFilter ? this.getData() : null
-  // }
+  handleChange = (e) => {
+    this.setState({ chosenCity: e.value })
+    console.log(this.state.chosenCity)
+  }
+
+  filterCities = () => {
+    return this.state.cities.filter(city => {
+      return city.city_name === this.state.chosenCity ||
+      this.state.chosenCity === 'ALL'
+    })
+  }
 
   render() {
+    if (!this.state.cities) return null
     return (
-      <section className="hero is-fullheight-with-navbar">
-        {/* <div className="hero-body-index">
-        </div>
-        <h2 className="skill-header">CITY : <span>{localStorage.getItem('city')}</span></h2>
-        {this.state.cities.map(city => (
-          <Link to={`/cities/${city._id}`} key={city._id}>
-            <div className="box">
-              <article className="media">
-                <img src={city.image} alt={user.name} />
-                <div className="info">
-                  <div className="bio">
-                    <h3 className="title">{user.name}</h3>
-                    {user.avgRating > 0 ?
-                      <h3>{user.avgRating} <span className="star">★</span></h3>
-                      :
-                      <h5>Not yet rated</h5>}
-                    <h4>{user.city}</h4>
-                  </div>
-                  <div className="skills">
-                    {user.skills.map((skill, i) => <p key={i}>{skill}</p>)}
-                  </div>
-                </div>
-              </article>
+      <>
+        <section className="hero-body-index">
+          <h2 className="skill-header">City selected: <span>{this.state.chosenCity}</span></h2>
+          <div className="fieldContainer">
+            <label className="label">Pick your city</label>
+            <div className="control">
+              <Select
+                options={this.options}
+                onChange={this.handleChange}
+              />
+              {/* <h1>{this.filterCities().city_name}</h1>
+              <hr />
+              <h2>{this.filterCities().city_description}</h2> */}
+              {this.filterCities().map(city =>
+                city.photographyspots.map(spot =>
+                  <>
+                    <br />
+                    <h1>{spot.location_name}</h1>
+                    <br />
+                    <h2>{spot.location_description}</h2>
+                    <br />
+                    <img src={spot.location_image} alt={spot.location_name} />
+                  </>
+                ))}
             </div>
-          </Link>
-        ))
-        } */}
-      </section>
+          </div>
+        </section>
+      </>
     )
   }
 }

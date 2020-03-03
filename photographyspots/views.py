@@ -4,15 +4,15 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.status import HTTP_404_NOT_FOUND, HTTP_201_CREATED, HTTP_422_UNPROCESSABLE_ENTITY, HTTP_204_NO_CONTENT, HTTP_202_ACCEPTED, HTTP_401_UNAUTHORIZED
 from .models import PhotographySpot
-from .serializers import PhotographySpotSerializer
+from .serializers import PopulatedPhotographySpotSerializer, PhotographySpotSerializer
 
 class PhotographySpotListView(APIView):
 
-    permission_classes = (IsAuthenticatedOrReadOnly, )
+    # permission_classes = (IsAuthenticatedOrReadOnly, )
 
     def get(self, _request):
         photographyspots = PhotographySpot.objects.all()
-        serialized_photographyspots = PhotographySpotSerializer(photographyspots, many=True)
+        serialized_photographyspots = PopulatedPhotographySpotSerializer(photographyspots, many=True)
         return Response(serialized_photographyspots.data)
 
     def post(self, request):
@@ -37,17 +37,17 @@ class PhotographySpotDetailView(APIView):  # extend the APIView
             # send the JSON to the client
             return Response({'message': 'Not Found'}, status=HTTP_404_NOT_FOUND)
 
-    def put(self, request, pk):
+    # def put(self, request, pk):
 
-        try:
-            photographyspot = PhotographySpot.objects.get(pk=pk)
-            updated_photographyspot = PhotographySpotSerializer(PhotographySpot, data=request.data)
-            if updated_photographyspot.is_valid():
-                updated_photographyspot.save()
-                return Response(updated_photographyspot.data, status=HTTP_202_ACCEPTED)
-            return Response(updated_photographyspot.errors, status=HTTP_422_UNPROCESSABLE_ENTITY)
-        except PhotographySpot.DoesNotExist:
-            return Response({'message': 'Not Found'}, status=HTTP_204_NO_CONTENT)
+        # try:
+        #     photographyspot = PhotographySpot.objects.get(pk=pk)
+        #     updated_photographyspot = PhotographySpotSerializer(PhotographySpot, data=request.data)
+        #     if updated_photographyspot.is_valid():
+        #         updated_photographyspot.save()
+        #         return Response(updated_photographyspot.data, status=HTTP_202_ACCEPTED)
+        #     return Response(updated_photographyspot.errors, status=HTTP_422_UNPROCESSABLE_ENTITY)
+        # except PhotographySpot.DoesNotExist:
+        #     return Response({'message': 'Not Found'}, status=HTTP_204_NO_CONTENT)
 
     def delete(self, _request, pk):
 

@@ -28,19 +28,15 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar nav is-transparent is-fixed-top">
         <div className="container">
-          <div className="navbar-brand">
-            <Link className="navbar-item" to="/">
-              <h1>Home</h1>
-            </Link>
-          </div>
-          <Link className="navbar-item" to="/map/london">MAP</Link>
+          <Link className="navbar-item" to="/">Home</Link>
+          {/* <Link className="navbar-item" to="/map/london">Map</Link> */}
+          <Link className="navbar-item" to="/cities">Cities</Link>
           <div className="navbar-end">
             {!Auth.isAuthenticated() && <Link className="navbar-item" to="/register">Register</Link>}
             {!Auth.isAuthenticated() && <Link className="navbar-item" to="/login">Login</Link>}
             {/* {Auth.isAuthenticated() && <Link className="navbar-item has-text-white" to="/messages">Inbox</Link>} */}
-            {Auth.isAuthenticated() && <Link className="navbar-item" to="/offers">OFFERS</Link>}
-            {Auth.isAuthenticated() && <Link className="navbar-item" to="/profile">PROFILE</Link>}
-            {Auth.isAuthenticated() && <a className="navbar-item" onClick={this.handleLogout}>LOGOUT</a>}
+            {Auth.isAuthenticated() && <Link className="navbar-item" to="/profile">Profile</Link>}
+            {Auth.isAuthenticated() && <a href className="navbar-item" onClick={this.handleLogout}>Logout</a>}
           </div>
         </div>
       </nav>

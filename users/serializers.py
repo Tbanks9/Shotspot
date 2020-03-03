@@ -12,7 +12,13 @@ class CitySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = City
-        fields = ('id', 'city_name')
+        fields = ('id', 'city_name',)
+
+class SearchUserSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ('first_name', 'second_name', 'username', 'email')
 
 class UserSerializer(serializers.ModelSerializer):
 
@@ -37,7 +43,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'first_name', 'cities', 'password', 'password_confirmation',)
+        fields = '__all__'
 
 class PopulatedUserSerializer(UserSerializer):
     cities = CitySerializer(many=True)

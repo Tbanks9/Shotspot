@@ -3,22 +3,21 @@
   "model": "users.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$150000$wPK2c6gt0B2s$EWvOfn6AhFcm5j4hzYO73deVI5QZfe848MJK7+7eht4=",
-    "last_login": "2020-02-27T09:58:54Z",
+    "password": "pbkdf2_sha256$150000$wRqXOySTIHEd$FfVh3GhEylUZA09jrpqZvFFRSq+zAOvza2T3Xl299tU=",
+    "last_login": "2020-03-02T21:54:05Z",
     "is_superuser": true,
-    "username": "timbanks",
+    "username": "admin",
     "last_name": "",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2020-02-27T09:58:38Z",
-    "first_name": "Tim",
-    "second_name": "Banks",
-    "email": "tim@email.com",
+    "date_joined": "2020-03-02T21:53:35Z",
+    "first_name": "name",
+    "second_name": "Surname",
+    "email": "admin@email.com",
     "groups": [],
     "user_permissions": [],
     "cities": [
-      1,
-      2
+      1
     ]
   }
 },
@@ -26,17 +25,17 @@
   "model": "users.user",
   "pk": 2,
   "fields": {
-    "password": "pass",
+    "password": "pbkdf2_sha256$150000$PuDm5JDzYajs$ZN3P/klcj9JrLGmmgZ3wZ/HXyQ+zzhPZc0RQV6v73ls=",
     "last_login": null,
     "is_superuser": false,
-    "username": "jamesbanks",
+    "username": "willyb",
     "last_name": "",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2020-02-27T10:22:29Z",
-    "first_name": "James",
+    "date_joined": "2020-03-02T21:55:44Z",
+    "first_name": "Will",
     "second_name": "Banks",
-    "email": "James@email.com",
+    "email": "willyb@email.com",
     "groups": [],
     "user_permissions": [],
     "cities": [
@@ -48,17 +47,63 @@
   "model": "users.user",
   "pk": 3,
   "fields": {
-    "password": "pass",
+    "password": "pbkdf2_sha256$150000$JqBIYwXzJjjT$9aU7z/hCTfRjA96E8OTLVdQzJ7m9/834BirzIdxCllM=",
     "last_login": null,
     "is_superuser": false,
-    "username": "josbogan",
+    "username": "jimbo",
     "last_name": "",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2020-02-27T14:42:14Z",
-    "first_name": "Jos",
-    "second_name": "Bogan",
-    "email": "jos@email.com",
+    "date_joined": "2020-03-02T21:56:03Z",
+    "first_name": "jim",
+    "second_name": "Banks",
+    "email": "jimbo@email.com",
+    "groups": [],
+    "user_permissions": [],
+    "cities": [
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "users.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$RIzY6dsHvFxE$iBn4eskurs4c2Zw3qJg42rNBbikfQfn4KdzJmm6h57E=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "janiceb",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-03-02T21:56:35Z",
+    "first_name": "Janice",
+    "second_name": "Banks",
+    "email": "janiceb@email.com",
+    "groups": [],
+    "user_permissions": [],
+    "cities": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "users.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$jy0rer62O992$6eCBGaA5WOi6wuhYAyo5xWYPtGi7K4Io6PjOwj1rZy8=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "clairesmith",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-03-02T21:56:55Z",
+    "first_name": "claire",
+    "second_name": "smith",
+    "email": "clairesmith@email.com",
     "groups": [],
     "user_permissions": [],
     "cities": [

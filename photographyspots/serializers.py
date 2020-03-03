@@ -1,19 +1,19 @@
 from rest_framework import serializers
-# from cities.models import City
-from images.models import Image
+from cities.models import City
+# from images.models import Image
 from .models import PhotographySpot
 
-# class CitySerializer(serializers.ModelSerializer):
-
-#     class Meta:
-#         model = City
-#         fields = '__all__'
-
-class ImageSerializer(serializers.ModelSerializer):
+class CitySerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Image
-        fields = '__all__'
+        model = City
+        fields = ('id', 'city_name')
+
+# class ImageSerializer(serializers.ModelSerializer):
+
+#     class Meta:
+#         model = Image
+#         fields = '__all__'
 
 class PhotographySpotSerializer(serializers.ModelSerializer):
 
@@ -21,5 +21,6 @@ class PhotographySpotSerializer(serializers.ModelSerializer):
         model = PhotographySpot
         fields = '__all__'
 
-# class PopulatedPhotographySpotSerializer(PhotographySpotSerializer):
-#     cities = CitySerializer(many=True)
+class PopulatedPhotographySpotSerializer(PhotographySpotSerializer):
+    city = CitySerializer()
+    # images = ImageSerializer()

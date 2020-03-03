@@ -22,7 +22,7 @@ class Login extends React.Component {
     try {
       const res = await axios.post('/api/login', this.state.data, headers)
       Auth.setToken(res.data.token)
-      this.props.history.push('/login')
+      this.props.history.push('/')
     } catch (err) {
       this.setState({ error: 'Invalid Credentials' })
     }
@@ -31,10 +31,10 @@ class Login extends React.Component {
   render() {
     return (
       <>
-        <section className="hero-body"> 
+        <section className="hero-body-index"> 
           <div className="logincontainer">
             <div className="logincolumns">
-              <form onSubmit={this.handleSubmit} className="column is-half is-offset-one-quarter is-half-mobile has-text-centered">
+              <form onSubmit={this.handleSubmit} className="column">
                 <h2 className="logintitle has-texted-centered">Login</h2>
                 <div className="field">
                   <div className="control">
