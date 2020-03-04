@@ -15,10 +15,11 @@ class CitySerializer(serializers.ModelSerializer):
         fields = ('id', 'city_name',)
 
 class SearchUserSerializer(serializers.ModelSerializer):
+    cities = CitySerializer(many=True)
 
     class Meta:
         model = User
-        fields = ('first_name', 'second_name', 'username', 'email')
+        fields = ('id', 'first_name', 'second_name', 'username', 'email', 'cities')
 
 class UserSerializer(serializers.ModelSerializer):
 
@@ -47,3 +48,4 @@ class UserSerializer(serializers.ModelSerializer):
 
 class PopulatedUserSerializer(UserSerializer):
     cities = CitySerializer(many=True)
+

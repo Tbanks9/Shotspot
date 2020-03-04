@@ -13,7 +13,9 @@ class UserProfile extends React.Component {
     const currentUser = Auth.getUser()
     try {
       const res = await axios.get(`/api/users/${currentUser}`, this.state.data, headers)
+      console.log(res.data)
       this.setState({ data: res.data })
+      console.log(currentUser)
     } catch (err) {
       this.props.history.push('/notfound')
     }
@@ -39,19 +41,25 @@ class UserProfile extends React.Component {
   }
 
   render() {
-    const { username, id } = this.state.data
-    if (!this.state.data) return null
+    if (!this.state.data.cities) return null
     return (
-      <section className="user-section">
-        <div className="user-container">
-          <div className="user-info fadeInLeft">
-            <h2 className="username">{username}</h2>
-            <hr />
-          </div>
-            <Link to={`/users/${id}/edit`} className="button is-rounded is-medium is-warning">
+      <section className="user-body-index">
+        <div className="userContainer">
+          <h2 className="username">Hey, {this.state.data.username}! 👋 </h2>
+          <h3 className="username">So far you've visited..</h3>
+          {this.state.data.cities.map(city =>
+            <div className="userCities">
+              <br />
+              <h1 className="photoSpotTitle">{city.city_name}</h1>
+              <br />
+            </div>
+          )}
+          <div className="buttonContainer">
+            <Link to={`/profile/${this.state.data.id}/edit`} type="submit" className="loginButton">
               Edit Profile
             </Link>
           </div>
+        </div>
       </section>
     )
   }

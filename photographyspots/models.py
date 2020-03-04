@@ -12,12 +12,33 @@ class PhotographySpot(models.Model):
         on_delete=models.CASCADE,
         default='City'
         )
-    # images = models.OneToOneField(
-    #     'images.Image', 
-    #     related_name='photographyspots', 
+    # owner = models.ForeignKey(
+    #     User,
+    #     related_name='places',
     #     on_delete=models.CASCADE,
-    #     default='Image'
-    #     )
+    #     null=True,
+    #     blank=True
+    # )
 
     def __str__(self):
         return self.location_name
+
+# class Comment(models.Model):
+#     text = models.TextField(max_length=1000, blank=True)
+#     photographyspots = models.ForeignKey(
+#         PhotographySpot,
+#         related_name='comments',
+#         on_delete=models.CASCADE,
+#         null=True,
+#         blank=True
+#     )
+#     owner = models.ForeignKey(
+#         User,
+#         related_name='comments',
+#         on_delete=models.CASCADE,
+#         null=True,
+#         blank=True
+#     )
+
+#     def __str__(self):
+#         return f'Comment {self.id} - {self.owner}'

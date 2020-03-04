@@ -22,7 +22,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <SecureRoute path="/users/:id/edit" component={UserEdit} />
+          <SecureRoute path="/profile/:id/edit" component={UserEdit} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/cities" component={CityIndex} />

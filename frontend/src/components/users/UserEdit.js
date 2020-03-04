@@ -12,6 +12,7 @@ class UserEdit extends React.Component {
       second_name: '',
       username: '',
       email: '',
+      cities: []
     },
     errors: {}
   }
@@ -23,13 +24,13 @@ class UserEdit extends React.Component {
       const res = await axios.get(`/api/users/${userId}`, this.state.data, headers)
       this.setState({ data: res.data })
     } catch (err) {
-      this.setState(err.response.data.errors)
+      console.log('something is wrong', err)
     }
   }
 
   handleChange = ({ target: { name, value } }) => {
-    const user = { ...this.state.user, [name]: value }
-    this.setState({ user })
+    const data = { ...this.state.data, [name]: value }
+    this.setState({ data })
   }
 
   handleSubmit = async e => {

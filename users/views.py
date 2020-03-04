@@ -26,13 +26,18 @@ class UserDetailView(APIView):
     # permission_classes = (IsAuthenticated, )
 
     def get(self, request, pk):
-        user = request.user
-        serializer = SearchUserSerializer(user)
-        return Response(serializer.data)
+
+        try:
+            user = User.objects.get(pk=pk)
+            serializer = SearchUserSerializer(user)
+            return Response(serializer.data)
+        except User.DoesNotExist:
+            return Response({'message': 'Not Found'}, status=HTTP_404_NOT_FOUND)
 
     def put(self, request, pk):
+
         try:
-            user = request.user
+            user = User.objects.get(pk=pk)
             updated_user = SearchUserSerializer(user, data=request.data)
             if updated_user.is_valid():
                 updated_user.save()
@@ -42,9 +47,10 @@ class UserDetailView(APIView):
             return  Response({'message': 'UNAUTHORIZED'}, status=HTTP_401_UNAUTHORIZED)
 
     def delete(self, request, pk):
+
         try:
-            user_find = request.user
-            user = User.objects.get(pk=user_find.pk)
+            user = request.user
+            user = User.objects.get(pk=pk)
             user.delete()
             return Response(status=HTTP_204_NO_CONTENT)
         except User.DoesNotExist:

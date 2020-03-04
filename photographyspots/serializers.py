@@ -9,18 +9,30 @@ class CitySerializer(serializers.ModelSerializer):
         model = City
         fields = ('id', 'city_name')
 
-# class ImageSerializer(serializers.ModelSerializer):
-
-#     class Meta:
-#         model = Image
-#         fields = '__all__'
-
 class PhotographySpotSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PhotographySpot
-        fields = '__all__'
+        fields = ('location_name', 'location_description', 'location_image')
+
+# class CommentSerializer(serializers.ModelSerializer): 
+
+#     class Meta:
+#         model = Comment
+#         fields = ('location_name', 'location_description', 'location_image')
+
+# class PopulatedCommentSerializer(CommentSerializer):
+
+#     owner = UserSerializer()
+
+# class PlaceSerializer(serializers.ModelSerializer):
+
+#     class Meta:
+#         model = Place
+#         fields = ('id', 'owner', 'name', 'postcode', 'image', 'description', 'visited', 'comments', 'categories')
+#         extra_kwargs = {'comments': {'required': False}, 'categories': {'required': False}}
 
 class PopulatedPhotographySpotSerializer(PhotographySpotSerializer):
     city = CitySerializer()
-    # images = ImageSerializer()
+    # owner = UserSerializer()
+    # comments = PopulatedCommentSerializer(many=True)

@@ -40,36 +40,39 @@ class CityIndex extends React.Component {
   filterCities = () => {
     return this.state.cities.filter(city => {
       return city.city_name === this.state.chosenCity ||
-      this.state.chosenCity === 'ALL'
+        this.state.chosenCity === 'ALL'
     })
   }
 
   render() {
     if (!this.state.cities) return null
+    console.log(this.state.cities)
     return (
       <>
         <section className="hero-body-index">
-          <h2 className="skill-header">City selected: <span>{this.state.chosenCity}</span></h2>
           <div className="fieldContainer">
-            <label className="label">Pick your city</label>
+            <h1 className="cityTitle">Pick your city</h1>
             <div className="control">
               <Select
                 options={this.options}
                 onChange={this.handleChange}
+                className="selectBar"
               />
+              <h2 className="header">City selected: <span>{this.state.chosenCity}</span></h2>
               {/* <h1>{this.filterCities().city_name}</h1>
               <hr />
               <h2>{this.filterCities().city_description}</h2> */}
               {this.filterCities().map(city =>
                 city.photographyspots.map(spot =>
-                  <>
+                  <div className="photograpySpot">
                     <br />
-                    <h1>{spot.location_name}</h1>
+                    <h1 className="photoSpotTitle">{spot.location_name}</h1>
                     <br />
-                    <h2>{spot.location_description}</h2>
+                    <img src={spot.location_image} className="image" alt={spot.location_name} />
                     <br />
-                    <img src={spot.location_image} alt={spot.location_name} />
-                  </>
+                    <h2 className="description">{spot.location_description}</h2>
+                    <br />
+                  </div>
                 ))}
             </div>
           </div>

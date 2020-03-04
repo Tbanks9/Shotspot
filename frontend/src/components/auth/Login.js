@@ -35,7 +35,7 @@ class Login extends React.Component {
           <div className="logincontainer">
             <div className="logincolumns">
               <form onSubmit={this.handleSubmit} className="column">
-                <h2 className="logintitle has-texted-centered">Login</h2>
+                <h1 className="logintitle has-texted-centered">Login</h1>
                 <div className="field">
                   <div className="control">
                     <input
@@ -62,7 +62,7 @@ class Login extends React.Component {
                   {this.state.error && <small className="is-danger">{this.state.error}</small>}
                 </div>
                 <br></br>
-                <button type="submit" className="button is-large is-warning is-fullwidth">Login</button>
+                <button type="submit" className="loginButton">Login</button>
               </form>
             </div>
           </div>

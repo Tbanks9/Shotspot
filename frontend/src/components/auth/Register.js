@@ -45,14 +45,14 @@ class Register extends React.Component {
 
   render() {
     return (
-      <section className="hero-body">
+      <section className="hero-body-index">
         <form onSubmit={this.handleSubmit} className="user-container">
-          <div className="user-info">
+          <div className="registerForm">
             {/* <h2 className="title">Register</h2> */}
             <br />
-            <div className="fieldContainer">
+            <div className="registerContainer">
               <div className="field">
-                <label className="label">First name</label>
+                <label className="registerLabel">First name</label>
                 <div className="control">
                   <input
                     className="input"
@@ -64,7 +64,7 @@ class Register extends React.Component {
                 </div>
               </div>
               <div className="field">
-                <label className="label">Surname</label>
+                <label className="registerLabel">Surname</label>
                 <div className="control">
                   <input
                     className="input"
@@ -77,7 +77,7 @@ class Register extends React.Component {
                 {/* {this.state.errors.name && <small className="help is-danger">{this.state.errors}</small>} */}
               </div>
               <div className="field">
-                <label className="label">Username</label>
+                <label className="registerLabel">Username</label>
                 <div className="control">
                   <input
                     className="input"
@@ -90,7 +90,7 @@ class Register extends React.Component {
                 {/* {this.state.errors.name && <small className="help is-danger">{this.state.errors}</small>} */}
               </div>
               <div className="field">
-                <label className="label">Email</label>
+                <label className="registerLabel">Email</label>
                 <div className="control">
                   <input
                     className="input"
@@ -103,7 +103,7 @@ class Register extends React.Component {
                 {/* {this.state.errors.email && <small className="help is-danger">{this.state.errors}</small>} */}
               </div>
               <div className="field">
-                <label className="label">Password</label>
+                <label className="registerLabel">Password</label>
                 <div className="control">
                   <input
                     className="input"
@@ -117,7 +117,7 @@ class Register extends React.Component {
                 {/* {this.state.errors.password && <small className="help is-danger">{this.state.errors}</small>} */}
               </div>
               <div className="field">
-                <label className="label">Password Confirmation</label>
+                <label className="registerLabel">Password Confirmation</label>
                 <div className="control">
                   <input
                     className="input"
@@ -128,6 +128,8 @@ class Register extends React.Component {
                     onChange={this.handleChange}
                   />
                 </div>
+                <br />
+                <button type="submit" className="registerButton">Register now</button>
                 {/* {this.state.errors.passwordConfirmation && <small className="help is-danger">{this.state.errors}</small>} */}
               </div>
             </div>
@@ -139,16 +141,16 @@ class Register extends React.Component {
               inputClassName="my-input-class"
             />
           </div> */}
-          <div className="skills-recipes">
+          {/* <div className="skills-recipes">
             <div className="fieldContainer">
-              <div className="control">
-                {/* <Select
+              <div className="control"> */}
+          {/* <Select
                   options={this.options}
                   isMulti
                   onChange={this.handleMultiChange}
                 /> */}
-              </div>
-              {/* <div className="field">
+          {/* </div> */}
+          {/* <div className="field">
                 <label className="label">Cities visited</label>
                 <div className="control">
                   <input
@@ -159,11 +161,9 @@ class Register extends React.Component {
                   />
                 </div>
                 {/* {this.state.errors.city && <small className="help is-danger">{this.state.errors.city}</small>} */}
-              {/* </div>  */}
-              <hr />
-              <button type="submit" className="button  is-primary">Save</button>
-            </div>
-          </div>
+          {/* </div>  */}
+          {/* </div>
+          </div> */}
         </form>
       </section>
     )
