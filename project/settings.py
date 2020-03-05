@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
+import django_heroku # put this at the top of the file
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -57,12 +58,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'project.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend')
+                ]  #Look, we have added the root folder of frontend here
+        ,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,7 +128,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+ROOT_URLCONF = 'project.urls' #check if you have this already, if not add it in
+
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'frontend', "build", "static"), 
+)
+
 CORS_ORIGIN_ALLOW_ALL = True
 
 REST_FRAMEWORK = {
@@ -143,3 +151,5 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = 'users.User'
+
+django_heroku.settings(locals()) # put this last
