@@ -15,7 +15,7 @@ class CitySerializer(serializers.ModelSerializer):
         fields = ('id', 'city_name',)
 
 class SearchUserSerializer(serializers.ModelSerializer):
-    cities = CitySerializer(many=True)
+    cities = CitySerializer(many=True, read_only=True)
 
     class Meta:
         model = User

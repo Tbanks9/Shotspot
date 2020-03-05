@@ -13,7 +13,7 @@ class PhotographySpotSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PhotographySpot
-        fields = ('location_name', 'location_description', 'location_image')
+        fields = ('location_name', 'location_description', 'location_image', 'visited', 'city')
 
 # class CommentSerializer(serializers.ModelSerializer): 
 

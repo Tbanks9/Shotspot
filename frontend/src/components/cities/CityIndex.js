@@ -16,7 +16,8 @@ class CityIndex extends React.Component {
     { value: 'Hong Kong', label: 'Hong Kong' },
     { value: 'London', label: 'London' },
     { value: 'Sydney', label: 'Sydney' },
-    { value: 'Reykjavik', label: 'Reykjavik' }
+    { value: 'Reykjavik', label: 'Reykjavik' },
+    { value: 'Lima', label: 'Lima' }
   ]
 
   async getData() {

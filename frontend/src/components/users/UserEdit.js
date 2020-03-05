@@ -11,8 +11,8 @@ class UserEdit extends React.Component {
       first_name: '',
       second_name: '',
       username: '',
-      email: '',
-      cities: []
+      email: ''
+      // cities: []
     },
     errors: {}
   }
@@ -40,7 +40,7 @@ class UserEdit extends React.Component {
     try {
       const res = await axios.put(`/api/users/${userId}`, this.state.data, headers)
       Auth.setToken(res.data.token)
-      this.props.history.push('/cities')
+      this.props.history.push('/')
     } catch (err) {
       this.setState(err.response.data.errors)
     }
