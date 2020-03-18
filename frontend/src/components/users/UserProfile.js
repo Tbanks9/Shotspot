@@ -42,18 +42,22 @@ class UserProfile extends React.Component {
 
   render() {
     if (!this.state.data.cities) return null
+    const { cities } = this.state.data
     return (
       <section className="user-body-index">
         <div className="userContainer">
           <h2 className="username">Hey, {this.state.data.username}! 👋 </h2>
-          <h3 className="username">So far you've visited..</h3>
-          {this.state.data.cities.map(city =>
-            <div className="userCities">
-              <br />
-              <h1 className="photoSpotTitle">{city.city_name}</h1>
-              <br />
-            </div>
-          )}
+          {cities ?
+            <><h3 className="username">So far you've visited..</h3>
+            {this.state.data.cities.map(city =>
+              <div className="userCities">
+                <br />
+                <h1 className="photoSpotTitle">{city.city_name}</h1>
+                <br />
+              </div>
+            )}</>
+            :
+            <p>No countries visited yet!</p>}
           <div className="buttonContainer">
             <Link to={`/profile/${this.state.data.id}/edit`} type="submit" className="loginButton">
               Edit Profile

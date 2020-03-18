@@ -23,7 +23,7 @@ class UserListView(APIView): # extend the APIView
 
 class UserDetailView(APIView):
 
-    # permission_classes = (IsAuthenticated, )
+# permission_classes = (IsAuthenticated, )
 
     def get(self, request, pk):
 

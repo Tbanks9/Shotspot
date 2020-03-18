@@ -12,14 +12,14 @@ class CityListView(APIView):
         serialized_cities = PopulatedCitySerializer(cities, many=True)
         return Response(serialized_cities.data)
 
-    def post(self, request):
+    # def post(self, request):
 
-        city = CitySerializer(data=request.data)
+    #     city = CitySerializer(data=request.data)
 
-        if city.is_valid():
-            city.save()
-            return Response(city.data, status=HTTP_201_CREATED)
-        return Response(city.errors, status=HTTP_422_UNPROCESSABLE_ENTITY)
+    #     if city.is_valid():
+    #         city.save()
+    #         return Response(city.data, status=HTTP_201_CREATED)
+    #     return Response(city.errors, status=HTTP_422_UNPROCESSABLE_ENTITY)
 
 class CityDetailView(APIView):  # extend the APIView
 

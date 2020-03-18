@@ -1,19 +1,25 @@
 from rest_framework import serializers
 from cities.models import City
-# from images.models import Image
 from .models import PhotographySpot
 
 class CitySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = City
-        fields = ('id', 'city_name')
+        fields = ('id',)
 
 class PhotographySpotSerializer(serializers.ModelSerializer):
+    city = CitySerializer()
 
     class Meta:
         model = PhotographySpot
-        fields = ('location_name', 'location_description', 'location_image', 'visited', 'city')
+        fields = ('location_name', 'location_description', 'location_image', 'city')
+
+    def save(self):
+        print('save() is called.')
+
+class PopulatedPhotographySpotSerializer(PhotographySpotSerializer):
+    city = CitySerializer()
 
 # class CommentSerializer(serializers.ModelSerializer): 
 
@@ -29,10 +35,9 @@ class PhotographySpotSerializer(serializers.ModelSerializer):
 
 #     class Meta:
 #         model = Place
-#         fields = ('id', 'owner', 'name', 'postcode', 'image', 'description', 'visited', 'comments', 'categories')
+#         fields = ('id', 'owner', 'name', 'postcode', 'image', 'description', 'comments', 'categories')
 #         extra_kwargs = {'comments': {'required': False}, 'categories': {'required': False}}
 
-class PopulatedPhotographySpotSerializer(PhotographySpotSerializer):
-    city = CitySerializer()
-    # owner = UserSerializer()
+
+    # user = UserSerializer()
     # comments = PopulatedCommentSerializer(many=True)

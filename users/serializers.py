@@ -5,6 +5,7 @@ import django.contrib.auth.password_validation as validations
 from django.contrib.auth.hashers import make_password
 from django.core.exceptions import ValidationError
 from cities.models import City
+from photographyspots.models import PhotographySpot
 from .models import User
 User = get_user_model()
 
@@ -12,14 +13,22 @@ class CitySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = City
-        fields = ('id', 'city_name',)
+        fields = ('id', 'city_name')
+
+class PhotographySpotSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = PhotographySpot
+        fields = ('id', 'location_name', 'location_description', 'location_image')
 
 class SearchUserSerializer(serializers.ModelSerializer):
     cities = CitySerializer(many=True, read_only=True)
+    photographyspots = PhotographySpotSerializer(many=True, read_only=True)
+
 
     class Meta:
         model = User
-        fields = ('id', 'first_name', 'second_name', 'username', 'email', 'cities')
+        fields = ('id', 'first_name', 'second_name', 'username', 'email', 'cities', 'photographyspots')
 
 class UserSerializer(serializers.ModelSerializer):
 
@@ -48,4 +57,5 @@ class UserSerializer(serializers.ModelSerializer):
 
 class PopulatedUserSerializer(UserSerializer):
     cities = CitySerializer(many=True)
+    photographyspots = PhotographySpotSerializer(many=True)
 

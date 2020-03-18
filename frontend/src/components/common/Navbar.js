@@ -32,6 +32,7 @@ class Navbar extends React.Component {
           {/* <Link className="navbar-item" to="/map/london">Map</Link> */}
           <Link className="navbar-item" to="/cities">Cities</Link>
           <div className="navbar-end">
+            {!Auth.isAuthenticated() && <Link className="navbar-item" to="/photographyspots">Add Location</Link>}
             {!Auth.isAuthenticated() && <Link className="navbar-item" to="/register">Register</Link>}
             {!Auth.isAuthenticated() && <Link className="navbar-item" to="/login">Login</Link>}
             {/* {Auth.isAuthenticated() && <Link className="navbar-item has-text-white" to="/messages">Inbox</Link>} */}

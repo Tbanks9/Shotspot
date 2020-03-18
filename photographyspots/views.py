@@ -8,7 +8,7 @@ from .serializers import PopulatedPhotographySpotSerializer, PhotographySpotSeri
 
 class PhotographySpotListView(APIView):
 
-    # permission_classes = (IsAuthenticatedOrReadOnly, )
+    # permission_classes = (IsAuthenticated, IsAuthenticatedOrReadOnly)
 
     def get(self, _request):
         photographyspots = PhotographySpot.objects.all()
@@ -16,10 +16,10 @@ class PhotographySpotListView(APIView):
         return Response(serialized_photographyspots.data)
 
     def post(self, request):
-
-        photographyspot = PhotographySpotSerializer(data=request.data)
+        photographyspot = PopulatedPhotographySpotSerializer(data=request.data)
 
         if photographyspot.is_valid():
+            print(photographyspot.is_valid())
             photographyspot.save()
             return Response(photographyspot.data, status=HTTP_201_CREATED)
         return Response(photographyspot.errors, status=HTTP_422_UNPROCESSABLE_ENTITY)

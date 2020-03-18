@@ -8,7 +8,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'first_name')
+        fields = ('id', 'username')
 
 class CitySerializer(serializers.ModelSerializer):
 
@@ -30,4 +30,5 @@ class PhotographySpotSerializer(serializers.ModelSerializer):
 
 class PopulatedCitySerializer(CitySerializer):
     photographyspots = PhotographySpotSerializer(many=True)
+    users = UserSerializer(many=True)
     # images = ImageSerializer(many=True)

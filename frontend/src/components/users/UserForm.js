@@ -34,7 +34,6 @@ const UserForm = ({ data, handleChange, handleDelete, handleSubmit, errors }) =>
                   value={data.second_name}
                 />
               </div>
-              {/* {errors.name && <small className="help is-danger">{errors.first_name}</small>} */}
             </div>
             <div className="field">
               <label className="registerLabel">Username</label>
@@ -48,7 +47,6 @@ const UserForm = ({ data, handleChange, handleDelete, handleSubmit, errors }) =>
                   value={data.username}
                 />
               </div>
-              {/* {this.state.errors.name && <small className="help is-danger">{this.state.errors}</small>} */}
             </div>
             <div className="field">
               <label className="registerLabel">Email</label>
@@ -61,35 +59,7 @@ const UserForm = ({ data, handleChange, handleDelete, handleSubmit, errors }) =>
                   value={data.email}
                 />
               </div>
-              {/* {errors.email && <small className="help is-danger">{errors.email}</small>} */}
             </div>
-            {/* <div className="field">
-              <label className="label">PASSWORD</label>
-              <div className="control">
-                <input
-                  className={`input is-rounded ${errors.password ? 'is-danger' : ''}`}
-                  type="password"
-                  placeholder="Password"
-                  name="password"
-                  onChange={handleChange}
-                />
-              </div>
-              {/* {errors.password && <small className="help is-danger">{errors.password}</small>} */}
-            {/* </div>
-            <div className="field">
-              <label className="label">Password confirmation</label>
-              <div className="control">
-                <input
-                  className={`input is-rounded ${errors.password_confirmation ? 'is-danger' : ''}`}
-                  type="password"
-                  placeholder="Password Confirmation"
-                  id="password_confirmation"
-                  name="password_confirmation"
-                  onChange={handleChange}
-                />
-              </div> */}
-              {/* {errors.password_confirmation && <small className="help is-danger">{errors.password_confirmation}</small>} */}
-            {/* </div>  */}
           </div>
           <div className="buttons">
             <button type="submit" className="editButton1">Save</button>
