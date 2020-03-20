@@ -24,7 +24,7 @@ class LocationNew extends React.Component {
   handleChange = ({ target: { name, description, image, value } }) => {
     const data = { ...this.state.data, [name]: value, [description]: value, [image]: value }
     const errors = { ...this.state.errors, [name]: '' }
-    this.setState({ data })
+    this.setState({ data, errors })
   }
 
   // handleChange(e) {

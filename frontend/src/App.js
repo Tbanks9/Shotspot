@@ -24,7 +24,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <SecureRoute path="/profile/:id/edit" component={UserEdit} />
-          <Route path="/location/new" component={LocationNew} />
+          <Route path="/photographyspots" component={LocationNew} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/cities" component={CityIndex} />

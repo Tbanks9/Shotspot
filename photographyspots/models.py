@@ -9,7 +9,8 @@ class PhotographySpot(models.Model):
         'cities.City', 
         related_name='photographyspots', 
         on_delete=models.CASCADE,
-        default='City'
+        default='City',
+        blank=True
         )
     # user = models.ForeignKey(
     #     'users.User',

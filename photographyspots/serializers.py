@@ -6,7 +6,7 @@ class CitySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = City
-        fields = ('id',)
+        fields = ('id', 'city_name')
 
 class PhotographySpotSerializer(serializers.ModelSerializer):
     city = CitySerializer()
