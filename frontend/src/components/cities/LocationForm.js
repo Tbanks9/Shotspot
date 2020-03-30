@@ -56,7 +56,7 @@ const LocationForm = ({ data, options, handleChange, handleSubmit, handleMultiSe
                 onChange={handleMultiSelect}
               />
             </div>
-            <button type="submit" className="create-button">Submit</button>
+            <button type="submit" className="locationButton">Submit</button>
           </form>
         </div>
       </div>

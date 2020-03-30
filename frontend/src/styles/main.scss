@@ -107,6 +107,35 @@ h1.logintitle {
   transform: translateY(4px);
 }
 
+.locationButton {
+  width: 250px;
+  height: 30px;
+  font-family: 'Montserrat', ;
+  font-weight: bolder;
+  font-size: 20px;
+  color: #E8E8E8;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin-top: 20px;
+  background-color: #8C9EB6;
+  cursor: pointer;
+}
+
+.locationButton:focus {
+outline:0;
+}
+
+.locationButton:hover {
+  background-color: #3C6E71;
+}
+
+.locationButton:active {
+  background-color: #3C6E71;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .selectBar {
   margin: 30px 400px 50px 400px;
 }
