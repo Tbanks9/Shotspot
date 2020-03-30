@@ -16,7 +16,7 @@ class PhotographySpotListView(APIView):
         return Response(serialized_photographyspots.data)
 
     def post(self, request):
-        photographyspot = PopulatedPhotographySpotSerializer(data=request.data)
+        photographyspot = PhotographySpotSerializer(data=request.data)
 
         if photographyspot.is_valid():
             print(photographyspot.is_valid())

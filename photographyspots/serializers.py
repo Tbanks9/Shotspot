@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from cities.models import City
+# from users.models import User
 from .models import PhotographySpot
 
 class CitySerializer(serializers.ModelSerializer):
@@ -8,8 +9,15 @@ class CitySerializer(serializers.ModelSerializer):
         model = City
         fields = ('id', 'city_name')
 
+# class UserSerializer(serializers.ModelSerializer):
+
+#     class Meta:
+#         model = User
+#         fields = ('id',)
+
 class PhotographySpotSerializer(serializers.ModelSerializer):
     city = CitySerializer()
+    # user = UserSerializer()
 
     class Meta:
         model = PhotographySpot
@@ -20,6 +28,8 @@ class PhotographySpotSerializer(serializers.ModelSerializer):
 
 class PopulatedPhotographySpotSerializer(PhotographySpotSerializer):
     city = CitySerializer()
+    # user = UserSerializer()
+
 
 # class CommentSerializer(serializers.ModelSerializer): 
 
