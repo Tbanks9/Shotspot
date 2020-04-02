@@ -82,7 +82,7 @@ The below is a code snippet from the "locationNew" component. It features a mult
 
 The handleChange function allows the user to upload the data required for uploading a new photography spot, and handleSubmit specififies where the new spot is being added, as well the URL path to take the user once the new spot has been added.
 
-```
+``` javascript
   componentDidMount() {
     axios.get('/api/cities')
       .then(res => this.setState({ city: res.data }))
@@ -110,7 +110,7 @@ The handleChange function allows the user to upload the data required for upload
 
 The Multi-Select below allows the user to add a city to the location they're adding. You can also see the different backend relationships below in the photographyspot model. The many-to-one relationships with users and cities ensure that each photography spot can only come from a single user, and likewise a city can have many photography spots, but each photography spot can only exist in one city. 
 
-  ```
+  ``` javascript
     handleMultiSelect = (selected) => {
     if (!selected) {
       return this.setState({ data: { ...this.state.data, city: {} } })
@@ -120,7 +120,7 @@ The Multi-Select below allows the user to add a city to the location they're add
   }
   ```
 
-```
+``` python
 class PhotographySpot(models.Model):
     location_name = models.CharField(max_length=50, unique=True)
     location_description = models.CharField(max_length=400, blank=True)
